@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter_app/pages/activity.dart';
-import 'package:flutter_app/pages/explore.dart';
-import 'package:flutter_app/pages/home.dart';
-import 'package:flutter_app/pages/onboarding_screen.dart';
 import 'package:flutter_app/pages/onboarding_screen_1.dart';
-import 'package:flutter_app/pages/onboarding_screen_2.dart';
-import 'package:flutter_app/pages/onboarding_screen_3.dart';
-import 'package:flutter_app/pages/workout.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    name: 'InitialisationFIREBASE',
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -19,14 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter App',
       home: Scaffold(
-        // body: Activity(),
-        // body: Explore(),
-        // body: Home(),
-        // body: OnboardingScreen(),
-        // body: OnboardingScreen1(),
-        body: OnboardingScreen2(),
-        // body: OnboardingScreen3(),
-        // body: Workout(),
+        body: OnboardingScreen1(),
       ),
     );
   }
