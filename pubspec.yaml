@@ -32,6 +32,7 @@ flutter:
   - assets/images/image_65.png
   - assets/images/image_67.png
   - assets/images/image_64.png
+  - assets/images/lower.jpeg
   - assets/images/image_2.png
   - assets/images/image_63.png
   - assets/vectors/group_5_x2.svg
@@ -65,7 +66,6 @@ flutter:
   - assets/vectors/vector_3_x2.svg
   - assets/vectors/group_21_x2.svg
   - assets/images/black_white_and_yellow_bold_fitness_logo_1_removebg_preview_11.png
-  - assets/images/boxed_water_is_better_zqndcje_06_vm_unsplash_1.jpeg
   - assets/images/black_white_and_yellow_bold_fitness_logo_2.png
   - assets/vectors/rectangle_2496_x2.svg
   - assets/vectors/rectangle_2497_x2.svg
@@ -83,7 +83,6 @@ flutter:
   - assets/images/black_white_and_yellow_bold_fitness_logo_1_removebg_preview_11.png
   - assets/images/anastase_maragos_izw_5_zlhmfd_4_unsplash_1.jpeg
   - assets/images/young_muscular_athlete_practicing_squats_gym_with_weight_1.jpeg
-  - assets/images/athletic_woman_practicing_pushups_while_working_out_living_room_1.jpeg
   - assets/vectors/frame_41_x2.svg
   - assets/vectors/group_23_x2.svg
   - assets/vectors/rectangle_6_x2.svg
