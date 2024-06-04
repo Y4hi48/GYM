@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'workout.dart'; // Assurez-vous d'importer le fichier workout.dart
 
 class Home extends StatelessWidget {
   @override
@@ -108,6 +109,12 @@ class Home extends StatelessWidget {
                   description: '100 Push up a day',
                   progress: 45,
                   image: 'assets/images/image_68.png',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Workout()),
+                    );
+                  },
                 ),
                 TodayPlanCard(
                   level: 'Beginner',
@@ -115,6 +122,9 @@ class Home extends StatelessWidget {
                   description: '20 Sit up a day',
                   progress: 85,
                   image: 'assets/images/image_68.png',
+                  onTap: () {
+                    // Vous pouvez ajouter la navigation ici pour d'autres exercices
+                  },
                 ),
                 TodayPlanCard(
                   level: 'Beginner',
@@ -122,42 +132,11 @@ class Home extends StatelessWidget {
                   description: '50 Knee Push up a day',
                   progress: 70,
                   image: 'assets/images/image_68.png',
+                  onTap: () {
+                    // Vous pouvez ajouter la navigation ici pour d'autres exercices
+                  },
                 ),
-                TodayPlanCard(
-                  level: 'Advanced',
-                  title: 'Deadlift',
-                  description: '50 Deadlift a day',
-                  progress: 65,
-                  image: 'assets/images/image_68.png',
-                ),
-                TodayPlanCard(
-                  level: 'Intermediate',
-                  title: 'Squat',
-                  description: '100 Squat a day',
-                  progress: 75,
-                  image: 'assets/images/image_68.png',
-                ),
-                TodayPlanCard(
-                  level: 'Advanced',
-                  title: 'Pull Up',
-                  description: '30 Pull up a day',
-                  progress: 55,
-                  image: 'assets/images/image_68.png',
-                ),
-                TodayPlanCard(
-                  level: 'Intermediate',
-                  title: 'Lunge',
-                  description: '50 Lunge a day',
-                  progress: 80,
-                  image: 'assets/images/image_68.png',
-                ),
-                TodayPlanCard(
-                  level: 'Beginner',
-                  title: 'Plank',
-                  description: '5 min Plank a day',
-                  progress: 90,
-                  image: 'assets/images/image_68.png',
-                ),
+                // Ajoutez d'autres TodayPlanCards ici si nécessaire
               ],
             ),
           ),
@@ -208,7 +187,7 @@ class WorkoutCard extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage(image),
+                image: AssetImage(image),
               ),
               borderRadius: BorderRadius.circular(10),
             ),
@@ -247,6 +226,7 @@ class TodayPlanCard extends StatelessWidget {
   final String description;
   final int progress;
   final String image;
+  final VoidCallback onTap;
 
   TodayPlanCard({
     required this.level,
@@ -254,72 +234,76 @@ class TodayPlanCard extends StatelessWidget {
     required this.description,
     required this.progress,
     required this.image,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 10,
-            spreadRadius: 5,
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: 80,
-            height: 80,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(image),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 10),
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 10,
+              spreadRadius: 5,
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 80,
+              height: 80,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(image),
+                ),
+                borderRadius: BorderRadius.circular(10),
               ),
-              borderRadius: BorderRadius.circular(10),
             ),
-          ),
-          SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  level,
-                  style: GoogleFonts.lato(
-                    textStyle: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blueAccent,
+            SizedBox(width: 10),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    level,
+                    style: GoogleFonts.lato(
+                      textStyle: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueAccent,
+                      ),
                     ),
                   ),
-                ),
-                Text(
-                  title,
-                  style: GoogleFonts.lato(
-                    textStyle: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  Text(
+                    title,
+                    style: GoogleFonts.lato(
+                      textStyle: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
-                Text(description),
-                SizedBox(height: 5),
-                LinearProgressIndicator(
-                  value: progress / 100,
-                  backgroundColor: Colors.grey[200],
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
-                ),
-              ],
+                  Text(description),
+                  SizedBox(height: 5),
+                  LinearProgressIndicator(
+                    value: progress / 100,
+                    backgroundColor: Colors.grey[200],
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -14,15 +14,21 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_svg: ^2.0.10+1
   firebase_storage: ^11.7.5
-  firebase_auth: ^4.19.5
+  firebase_auth: ^4.19.6
   cloud_firestore: ^4.17.3
-  firebase_core: ^2.31.0
+  firebase_core: ^2.31.1
+  camerawesome: ^2.0.0-dev.1
+  camera: ^0.9.4+5
+  line_awesome_flutter: ^2.0.0
+  share: ^2.0.4 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
   flutter_svg: ^2.0.10+1
+  http: 1.2.1
+  camera: ^0.9.4+5
 
 flutter:
   uses-material-design: true
@@ -32,7 +38,6 @@ flutter:
   - assets/images/image_65.png
   - assets/images/image_67.png
   - assets/images/image_64.png
-  - assets/images/lower.jpeg
   - assets/images/image_2.png
   - assets/images/image_63.png
   - assets/vectors/group_5_x2.svg
@@ -83,7 +88,6 @@ flutter:
   - assets/images/black_white_and_yellow_bold_fitness_logo_1_removebg_preview_11.png
   - assets/images/anastase_maragos_izw_5_zlhmfd_4_unsplash_1.jpeg
   - assets/images/young_muscular_athlete_practicing_squats_gym_with_weight_1.jpeg
-  - assets/vectors/frame_41_x2.svg
   - assets/vectors/group_23_x2.svg
   - assets/vectors/rectangle_6_x2.svg
   - assets/vectors/ic_play_1_x2.svg
