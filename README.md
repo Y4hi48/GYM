@@ -1,16 +1,1 @@
-# flutter_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[View the results tables pdf]([https://github.com/Y4hi48/Computer-Vision-school-projects-agriculture-applications/blob/main/projet%20CP%20agriculture%20tableaux%20des%20resultats.pdf](https://drive.google.com/file/d/1vWdakWdGuETeU0ieIXo70FfZlWpD1EDn/view?usp=sharing))
